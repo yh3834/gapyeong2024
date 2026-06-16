@@ -1,40 +1,51 @@
-
 <h2 class="sr-only">2024 가평군 세출결산 종합분석 보고서 — 집행률, 불용 사업, 전년 비교, 정책 권고 포함</h2>
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--font-sans);font-size:15px;color:var(--color-text-primary);line-height:1.6}
-.report{padding:1.5rem 0}
+body{
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size:15px;
+  color:var(--color-text-primary, #111827);
+  background-color: var(--color-background-primary, #ffffff);
+  line-height:1.6;
+}
+/* 가로 사이즈 800px 제한 및 중앙 정렬 */
+.report{
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
 .section{margin-bottom:2.5rem}
-.section-title{font-size:16px;font-weight:500;color:var(--color-text-primary);margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:1.5px solid var(--color-border-secondary)}
-.section-num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--color-background-info);color:var(--color-text-info);font-size:12px;font-weight:500;margin-right:8px;vertical-align:middle}
+.section-title{font-size:16px;font-weight:500;color:var(--color-text-primary);margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:1.5px solid var(--color-border-secondary, #e5e7eb)}
+.section-num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--color-background-info, #eff6ff);color:var(--color-text-info, #1d4ed8);font-size:12px;font-weight:500;margin-right:8px;vertical-align:middle}
 .metric-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:1.5rem}
-.metric{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:0.85rem 1rem}
-.metric-label{font-size:12px;color:var(--color-text-secondary);margin-bottom:4px}
+.metric{background:var(--color-background-secondary, #f3f4f6);border-radius:var(--border-radius-md, 8px);padding:0.85rem 1rem}
+.metric-label{font-size:12px;color:var(--color-text-secondary, #4b5563);margin-bottom:4px}
 .metric-value{font-size:22px;font-weight:500}
-.metric-sub{font-size:12px;color:var(--color-text-tertiary);margin-top:2px}
+.metric-sub{font-size:12px;color:var(--color-text-tertiary, #9ca3af);margin-top:2px}
 .good{color:#1D9E75}.warn{color:#BA7517}.bad{color:#A32D2D}
 table{width:100%;border-collapse:collapse;font-size:13px}
-th{text-align:left;font-weight:500;font-size:12px;color:var(--color-text-secondary);padding:6px 10px;border-bottom:0.5px solid var(--color-border-secondary);background:var(--color-background-secondary)}
-td{padding:7px 10px;border-bottom:0.5px solid var(--color-border-tertiary);vertical-align:middle}
-.badge{display:inline-block;padding:2px 8px;border-radius:var(--border-radius-md);font-size:11px;font-weight:500}
-.badge-bad{background:var(--color-background-danger);color:var(--color-text-danger)}
-.badge-warn{background:var(--color-background-warning);color:var(--color-text-warning)}
-.badge-ok{background:var(--color-background-success);color:var(--color-text-success)}
-.badge-info{background:var(--color-background-info);color:var(--color-text-info)}
-.bar-wrap{width:120px;height:8px;background:var(--color-background-tertiary);border-radius:4px;display:inline-block;vertical-align:middle;margin-right:6px}
+th{text-align:left;font-weight:500;font-size:12px;color:var(--color-text-secondary, #4b5563);padding:6px 10px;border-bottom:0.5px solid var(--color-border-secondary, #e5e7eb);background:var(--color-background-secondary, #f3f4f6)}
+td{padding:7px 10px;border-bottom:0.5px solid var(--color-border-tertiary, #f3f4f6);vertical-align:middle}
+.badge{display:inline-block;padding:2px 8px;border-radius:var(--border-radius-md, 6px);font-size:11px;font-weight:500}
+.badge-bad{background:var(--color-background-danger, #fee2e2);color:var(--color-text-danger, #991b1b)}
+.badge-warn{background:var(--color-background-warning, #fef3c7);color:var(--color-text-warning, #92400e)}
+.badge-ok{background:var(--color-background-success, #d1fae5);color:var(--color-text-success, #065f46)}
+.badge-info{background:var(--color-background-info, #eff6ff);color:var(--color-text-info, #1d4ed8)}
+.bar-wrap{width:120px;height:8px;background:var(--color-background-tertiary, #e5e7eb);border-radius:4px;display:inline-block;vertical-align:middle;margin-right:6px}
 .bar-fill{height:100%;border-radius:4px}
 .chart-wrap{position:relative;width:100%;height:280px;margin:1rem 0}
 .chart-wrap2{position:relative;width:100%;height:220px;margin:1rem 0}
-.type-card{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:0.85rem 1rem;margin-bottom:8px}
+.type-card{background:var(--color-background-secondary, #f3f4f6);border-radius:var(--border-radius-md, 8px);padding:0.85rem 1rem;margin-bottom:8px}
 .type-head{font-size:13px;font-weight:500;margin-bottom:4px}
-.type-body{font-size:12px;color:var(--color-text-secondary);line-height:1.6}
-.tag{display:inline-block;padding:2px 7px;border-radius:var(--border-radius-md);font-size:11px;background:var(--color-background-tertiary);color:var(--color-text-secondary);margin-right:4px;margin-bottom:3px}
-.rec-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem 1.25rem;margin-bottom:8px;display:flex;gap:12px;align-items:flex-start}
-.rec-num{width:28px;height:28px;border-radius:50%;background:var(--color-background-info);color:var(--color-text-info);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;flex-shrink:0}
+.type-body{font-size:12px;color:var(--color-text-secondary, #4b5563);line-height:1.6}
+.tag{display:inline-block;padding:2px 7px;border-radius:var(--border-radius-md, 6px);font-size:11px;background:var(--color-background-tertiary, #e5e7eb);color:var(--color-text-secondary, #4b5563);margin-right:4px;margin-bottom:3px}
+.rec-card{background:var(--color-background-primary, #ffffff);border:0.5px solid var(--color-border-tertiary, #e5e7eb);border-radius:var(--border-radius-lg, 12px);padding:1rem 1.25rem;margin-bottom:8px;display:flex;gap:12px;align-items:flex-start}
+.rec-num{width:28px;height:28px;border-radius:50%;background:var(--color-background-info, #eff6ff);color:var(--color-text-info, #1d4ed8);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;flex-shrink:0}
 .rec-title{font-size:14px;font-weight:500;margin-bottom:3px}
-.rec-body{font-size:13px;color:var(--color-text-secondary)}
-.legend{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:8px;font-size:12px;color:var(--color-text-secondary)}
+.rec-body{font-size:13px;color:var(--color-text-secondary, #4b5563)}
+.legend{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:8px;font-size:12px;color:var(--color-text-secondary, #4b5563)}
 .legend-item{display:flex;align-items:center;gap:4px}
 .legend-dot{width:10px;height:10px;border-radius:2px}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
@@ -44,7 +55,7 @@ td{padding:7px 10px;border-bottom:0.5px solid var(--color-border-tertiary);verti
 <div class="report">
 
 <div style="margin-bottom:2rem">
-  <p style="font-size:13px;color:var(--color-text-secondary)">경기도 가평군 · 2024회계연도 결산서 기반 · 분석 기준: 예산현액 대비 지출액</p>
+  <p style="font-size:13px;color:var(--color-text-secondary, #4b5563)">경기도 가평군 · 2024회계연도 결산서 기반 · 분석 기준: 예산현액 대비 지출액</p>
   <p style="font-size:20px;font-weight:500;margin-top:4px">2024년도 세출결산 종합 분석 보고서</p>
 </div>
 
@@ -76,34 +87,34 @@ td{padding:7px 10px;border-bottom:0.5px solid var(--color-border-tertiary);verti
 
   <div class="two-col">
     <div>
-      <p style="font-size:13px;font-weight:500;color:var(--color-text-secondary);margin-bottom:8px">회계별 집행률</p>
+      <p style="font-size:13px;font-weight:500;color:var(--color-text-secondary, #4b5563);margin-bottom:8px">회계별 집행률</p>
       <table>
         <thead><tr><th>회계 구분</th><th>예산현액(억)</th><th>지출액(억)</th><th>집행률</th></tr></thead>
         <tbody>
           <tr><td>일반회계</td><td>6,988</td><td>5,682</td><td><span class="badge badge-ok">81.3%</span></td></tr>
           <tr><td>공기업특별회계</td><td>830</td><td>598</td><td><span class="badge badge-bad">71.9%</span></td></tr>
-          <tr style="padding-left:1rem"><td style="padding-left:20px;color:var(--color-text-secondary)">└ 상수도사업특별회계</td><td>265</td><td>173</td><td><span class="badge badge-bad">65.2%</span></td></tr>
-          <tr><td style="padding-left:20px;color:var(--color-text-secondary)">└ 하수도사업특별회계</td><td>564</td><td>424</td><td><span class="badge badge-bad">75.2%</span></td></tr>
+          <tr style="padding-left:1rem"><td style="padding-left:20px;color:var(--color-text-secondary, #4b5563)">└ 상수도사업특별회계</td><td>265</td><td>173</td><td><span class="badge badge-bad">65.2%</span></td></tr>
+          <tr><td style="padding-left:20px;color:var(--color-text-secondary, #4b5563)">└ 하수도사업특별회계</td><td>564</td><td>424</td><td><span class="badge badge-bad">75.2%</span></td></tr>
           <tr><td>기타특별회계</td><td>326</td><td>268</td><td><span class="badge badge-ok">82.0%</span></td></tr>
-          <tr><td style="padding-left:20px;color:var(--color-text-secondary)">└ 주차장특별회계</td><td>92</td><td>67</td><td><span class="badge badge-bad">73.1%</span></td></tr>
-          <tr><td style="padding-left:20px;color:var(--color-text-secondary)">└ 수질개선특별회계</td><td>212</td><td>180</td><td><span class="badge badge-ok">84.7%</span></td></tr>
-          <tr><td style="padding-left:20px;color:var(--color-text-secondary)">└ 의료급여기금특별회계</td><td>12</td><td>11</td><td><span class="badge badge-ok">96.8%</span></td></tr>
-          <tr><td style="padding-left:20px;color:var(--color-text-secondary)">└ 발전소주변지역특별회계</td><td>9</td><td>8</td><td><span class="badge badge-ok">86.9%</span></td></tr>
+          <tr><td style="padding-left:20px;color:var(--color-text-secondary, #4b5563)">└ 주차장특별회계</td><td>92</td><td>67</td><td><span class="badge badge-bad">73.1%</span></td></tr>
+          <tr><td style="padding-left:20px;color:var(--color-text-secondary, #4b5563)">└ 수질개선특별회계</td><td>212</td><td>180</td><td><span class="badge badge-ok">84.7%</span></td></tr>
+          <tr><td style="padding-left:20px;color:var(--color-text-secondary, #4b5563)">└ 의료급여기금특별회계</td><td>12</td><td>11</td><td><span class="badge badge-ok">96.8%</span></td></tr>
+          <tr><td style="padding-left:20px;color:var(--color-text-secondary, #4b5563)">└ 발전소주변지역특별회계</td><td>9</td><td>8</td><td><span class="badge badge-ok">86.9%</span></td></tr>
         </tbody>
       </table>
     </div>
     <div>
-      <p style="font-size:13px;font-weight:500;color:var(--color-text-secondary);margin-bottom:8px">일반회계 기능별 집행률 (80% 미만 항목 강조)</p>
+      <p style="font-size:13px;font-weight:500;color:var(--color-text-secondary, #4b5563);margin-bottom:8px">일반회계 기능별 집행률 (80% 미만 항목 강조)</p>
       <div class="chart-wrap2">
         <canvas id="execChart" role="img" aria-label="가평군 2024 일반회계 기능별 집행률 막대차트, 교육 52.7%, 국토및지역개발 64.3%, 문화관광 71.0%, 공공질서 72.6%, 교통물류 73.5%, 환경 79.0%, 농림 81.8%, 산업중기 85.2%, 사회복지 89.1%, 보건 94.8%, 기타 95.7%, 일반공공행정 93.2%">집행률 데이터: 교육 52.7% / 국토및지역개발 64.3% / 문화및관광 71.0% / 공공질서및안전 72.6% / 교통및물류 73.5% / 환경 79.0% / 농림해양수산 81.8% / 산업중기에너지 85.2% / 사회복지 89.1% / 보건 94.8% / 일반공공행정 93.2% / 기타 95.7%</canvas>
       </div>
     </div>
   </div>
 
-  <div style="margin-top:1rem;background:var(--color-background-danger);border-radius:var(--border-radius-md);padding:0.75rem 1rem">
-    <p style="font-size:13px;font-weight:500;color:var(--color-text-danger);margin-bottom:4px">80% 미만 집행률 분야 요약 (일반회계 기능 분야)</p>
-    <p style="font-size:12px;color:var(--color-text-danger)">교육(52.7%), 국토및지역개발(64.3%), 문화및관광(71.0%), 공공질서및안전(72.6%), 교통및물류(73.5%), 환경(79.0%) — 총 6개 분야</p>
-    <p style="font-size:12px;color:var(--color-text-danger);margin-top:4px">특별회계: 공기업특별회계(71.9%), 상수도특별회계(65.2%), 하수도특별회계(75.2%), 주차장특별회계(73.1%)</p>
+  <div style="margin-top:1rem;background:var(--color-background-danger, #fee2e2);border-radius:var(--border-radius-md, 8px);padding:0.75rem 1rem">
+    <p style="font-size:13px;font-weight:500;color:var(--color-text-danger, #991b1b);margin-bottom:4px">80% 미만 집행률 분야 요약 (일반회계 기능 분야)</p>
+    <p style="font-size:12px;color:var(--color-text-danger, #991b1b)">교육(52.7%), 국토및지역개발(64.3%), 문화및관광(71.0%), 공공질서및안전(72.6%), 교통및물류(73.5%), 환경(79.0%) — 총 6개 분야</p>
+    <p style="font-size:12px;color:var(--color-text-danger, #991b1b);margin-top:4px">특별회계: 공기업특별회계(71.9%), 상수도특별회계(65.2%), 하수도특별회계(75.2%), 주차장특별회계(73.1%)</p>
   </div>
 </div>
 
@@ -178,7 +189,7 @@ td{padding:7px 10px;border-bottom:0.5px solid var(--color-border-tertiary);verti
       <tr><td>⑩</td><td>산업ㆍ중소기업및에너지</td><td>1,229</td><td><span class="badge badge-info">보조금 정산잔액 1,157백만 (국비·도비 보조사업 확정 지연)</span></td></tr>
     </tbody>
   </table>
-  <p style="font-size:12px;color:var(--color-text-tertiary);margin-top:8px">※ 집행잔액 = 예산현액 − 지출액 − 이월액 − 보조금반납금. 예비비(449억) 제외.</p>
+  <p style="font-size:12px;color:var(--color-text-tertiary, #9ca3af);margin-top:8px">※ 집행잔액 = 예산현액 − 지출액 − 이월액 − 보조금반납금. 예비비(449억) 제외.</p>
 </div>
 
 <div class="section">
