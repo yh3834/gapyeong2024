@@ -1,0 +1,344 @@
+
+<h2 class="sr-only">2024 가평군 세출결산 종합분석 보고서 — 집행률, 불용 사업, 전년 비교, 정책 권고 포함</h2>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);font-size:15px;color:var(--color-text-primary);line-height:1.6}
+.report{padding:1.5rem 0}
+.section{margin-bottom:2.5rem}
+.section-title{font-size:16px;font-weight:500;color:var(--color-text-primary);margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:1.5px solid var(--color-border-secondary)}
+.section-num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--color-background-info);color:var(--color-text-info);font-size:12px;font-weight:500;margin-right:8px;vertical-align:middle}
+.metric-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:1.5rem}
+.metric{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:0.85rem 1rem}
+.metric-label{font-size:12px;color:var(--color-text-secondary);margin-bottom:4px}
+.metric-value{font-size:22px;font-weight:500}
+.metric-sub{font-size:12px;color:var(--color-text-tertiary);margin-top:2px}
+.good{color:#1D9E75}.warn{color:#BA7517}.bad{color:#A32D2D}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;font-weight:500;font-size:12px;color:var(--color-text-secondary);padding:6px 10px;border-bottom:0.5px solid var(--color-border-secondary);background:var(--color-background-secondary)}
+td{padding:7px 10px;border-bottom:0.5px solid var(--color-border-tertiary);vertical-align:middle}
+.badge{display:inline-block;padding:2px 8px;border-radius:var(--border-radius-md);font-size:11px;font-weight:500}
+.badge-bad{background:var(--color-background-danger);color:var(--color-text-danger)}
+.badge-warn{background:var(--color-background-warning);color:var(--color-text-warning)}
+.badge-ok{background:var(--color-background-success);color:var(--color-text-success)}
+.badge-info{background:var(--color-background-info);color:var(--color-text-info)}
+.bar-wrap{width:120px;height:8px;background:var(--color-background-tertiary);border-radius:4px;display:inline-block;vertical-align:middle;margin-right:6px}
+.bar-fill{height:100%;border-radius:4px}
+.chart-wrap{position:relative;width:100%;height:280px;margin:1rem 0}
+.chart-wrap2{position:relative;width:100%;height:220px;margin:1rem 0}
+.type-card{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:0.85rem 1rem;margin-bottom:8px}
+.type-head{font-size:13px;font-weight:500;margin-bottom:4px}
+.type-body{font-size:12px;color:var(--color-text-secondary);line-height:1.6}
+.tag{display:inline-block;padding:2px 7px;border-radius:var(--border-radius-md);font-size:11px;background:var(--color-background-tertiary);color:var(--color-text-secondary);margin-right:4px;margin-bottom:3px}
+.rec-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem 1.25rem;margin-bottom:8px;display:flex;gap:12px;align-items:flex-start}
+.rec-num{width:28px;height:28px;border-radius:50%;background:var(--color-background-info);color:var(--color-text-info);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;flex-shrink:0}
+.rec-title{font-size:14px;font-weight:500;margin-bottom:3px}
+.rec-body{font-size:13px;color:var(--color-text-secondary)}
+.legend{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:8px;font-size:12px;color:var(--color-text-secondary)}
+.legend-item{display:flex;align-items:center;gap:4px}
+.legend-dot{width:10px;height:10px;border-radius:2px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:520px){.metric-row{grid-template-columns:1fr 1fr}.two-col{grid-template-columns:1fr}}
+</style>
+
+<div class="report">
+
+<div style="margin-bottom:2rem">
+  <p style="font-size:13px;color:var(--color-text-secondary)">경기도 가평군 · 2024회계연도 결산서 기반 · 분석 기준: 예산현액 대비 지출액</p>
+  <p style="font-size:20px;font-weight:500;margin-top:4px">2024년도 세출결산 종합 분석 보고서</p>
+</div>
+
+<div class="metric-row">
+  <div class="metric">
+    <div class="metric-label">총 예산현액</div>
+    <div class="metric-value">8,145억원</div>
+    <div class="metric-sub">전년 대비 +1.5%</div>
+  </div>
+  <div class="metric">
+    <div class="metric-label">총 세출(지출액)</div>
+    <div class="metric-value">6,548억원</div>
+    <div class="metric-sub">전년 대비 +5.2%</div>
+  </div>
+  <div class="metric">
+    <div class="metric-label">전체 집행률</div>
+    <div class="metric-value warn">80.4%</div>
+    <div class="metric-sub">이월+불용 = 1,597억원</div>
+  </div>
+  <div class="metric">
+    <div class="metric-label">순세계잉여금</div>
+    <div class="metric-value">417억원</div>
+    <div class="metric-sub">일반회계 311억원</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="section-num">1</span>회계별·기능별 집행률 및 80% 미만 부서</div>
+
+  <div class="two-col">
+    <div>
+      <p style="font-size:13px;font-weight:500;color:var(--color-text-secondary);margin-bottom:8px">회계별 집행률</p>
+      <table>
+        <thead><tr><th>회계 구분</th><th>예산현액(억)</th><th>지출액(억)</th><th>집행률</th></tr></thead>
+        <tbody>
+          <tr><td>일반회계</td><td>6,988</td><td>5,682</td><td><span class="badge badge-ok">81.3%</span></td></tr>
+          <tr><td>공기업특별회계</td><td>830</td><td>598</td><td><span class="badge badge-bad">71.9%</span></td></tr>
+          <tr style="padding-left:1rem"><td style="padding-left:20px;color:var(--color-text-secondary)">└ 상수도사업특별회계</td><td>265</td><td>173</td><td><span class="badge badge-bad">65.2%</span></td></tr>
+          <tr><td style="padding-left:20px;color:var(--color-text-secondary)">└ 하수도사업특별회계</td><td>564</td><td>424</td><td><span class="badge badge-bad">75.2%</span></td></tr>
+          <tr><td>기타특별회계</td><td>326</td><td>268</td><td><span class="badge badge-ok">82.0%</span></td></tr>
+          <tr><td style="padding-left:20px;color:var(--color-text-secondary)">└ 주차장특별회계</td><td>92</td><td>67</td><td><span class="badge badge-bad">73.1%</span></td></tr>
+          <tr><td style="padding-left:20px;color:var(--color-text-secondary)">└ 수질개선특별회계</td><td>212</td><td>180</td><td><span class="badge badge-ok">84.7%</span></td></tr>
+          <tr><td style="padding-left:20px;color:var(--color-text-secondary)">└ 의료급여기금특별회계</td><td>12</td><td>11</td><td><span class="badge badge-ok">96.8%</span></td></tr>
+          <tr><td style="padding-left:20px;color:var(--color-text-secondary)">└ 발전소주변지역특별회계</td><td>9</td><td>8</td><td><span class="badge badge-ok">86.9%</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <p style="font-size:13px;font-weight:500;color:var(--color-text-secondary);margin-bottom:8px">일반회계 기능별 집행률 (80% 미만 항목 강조)</p>
+      <div class="chart-wrap2">
+        <canvas id="execChart" role="img" aria-label="가평군 2024 일반회계 기능별 집행률 막대차트, 교육 52.7%, 국토및지역개발 64.3%, 문화관광 71.0%, 공공질서 72.6%, 교통물류 73.5%, 환경 79.0%, 농림 81.8%, 산업중기 85.2%, 사회복지 89.1%, 보건 94.8%, 기타 95.7%, 일반공공행정 93.2%">집행률 데이터: 교육 52.7% / 국토및지역개발 64.3% / 문화및관광 71.0% / 공공질서및안전 72.6% / 교통및물류 73.5% / 환경 79.0% / 농림해양수산 81.8% / 산업중기에너지 85.2% / 사회복지 89.1% / 보건 94.8% / 일반공공행정 93.2% / 기타 95.7%</canvas>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:1rem;background:var(--color-background-danger);border-radius:var(--border-radius-md);padding:0.75rem 1rem">
+    <p style="font-size:13px;font-weight:500;color:var(--color-text-danger);margin-bottom:4px">80% 미만 집행률 분야 요약 (일반회계 기능 분야)</p>
+    <p style="font-size:12px;color:var(--color-text-danger)">교육(52.7%), 국토및지역개발(64.3%), 문화및관광(71.0%), 공공질서및안전(72.6%), 교통및물류(73.5%), 환경(79.0%) — 총 6개 분야</p>
+    <p style="font-size:12px;color:var(--color-text-danger);margin-top:4px">특별회계: 공기업특별회계(71.9%), 상수도특별회계(65.2%), 하수도특별회계(75.2%), 주차장특별회계(73.1%)</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="section-num">2</span>집행률 저조 원인 유형 분류</div>
+
+  <div class="type-card">
+    <div class="type-head">① 계속사업 이월 (계속비이월) — 다년도 인프라 사업 특성</div>
+    <div class="type-body">
+      단년도 집행 불가한 대형 시설사업으로 계획적 이월. 실질 집행부진이 아닌 사업구조 특성.<br>
+      <span class="tag">교육 분야 1,077억원 이월</span><span class="tag">공기업환경 751억원 이월</span><span class="tag">국토개발 354억원 이월</span><br>
+      해당 사업: 체육시설 정비, 하수처리장 확충, 상수도 관로 정비 등
+    </div>
+  </div>
+  <div class="type-card">
+    <div class="type-head">② 사업 지연 (사고이월) — 공사 착공 지연, 설계 변경, 용지 취득 지연</div>
+    <div class="type-body">
+      발주 지연·계약 지연·악천후 등 불가피한 사유로 당해연도 집행 불가.<br>
+      <span class="tag">문화관광 499억원</span><span class="tag">국토개발 455억원</span><span class="tag">교통물류 134억원</span><br>
+      해당 사업: 도로 개설사업, 관광단지 개발사업, 생활체육공원 정비 등
+    </div>
+  </div>
+  <div class="type-card">
+    <div class="type-head">③ 예산 배분 변경 (명시이월) — 국비·도비 확정 지연, 집행계획 변경</div>
+    <div class="type-body">
+      의회 동의로 다음연도로 이월 승인된 예산. 재원 확정 지연, 사업계획 수정 등이 주요 원인.<br>
+      <span class="tag">문화관광 1,432억원</span><span class="tag">국토개발 981억원</span><span class="tag">농림해양수산 570억원</span><span class="tag">사회복지 180억원</span>
+    </div>
+  </div>
+  <div class="type-card">
+    <div class="type-head">④ 예산 과다 편성 — 보조금 정산잔액, 사업 수요 과대 추계</div>
+    <div class="type-body">
+      국비·도비 보조사업 대상자 미확정 또는 낙찰차액 발생으로 인한 순수 불용액.<br>
+      <span class="tag">산업중소기업 115억원 정산잔액</span><span class="tag">사회복지 120억원</span><span class="tag">환경 107억원</span><br>
+      보조금 정산잔액의 경우 차년도 반납 또는 세계잉여금으로 처리
+    </div>
+  </div>
+  <div class="type-card">
+    <div class="type-head">⑤ 사업 미착수·집행 역량 부족 — 계획 대비 실집행 미흡</div>
+    <div class="type-body">
+      수요 조사 미흡, 담당인력 부족, 사업 추진 의사결정 지연 등으로 예산 전액 이월 또는 불용.<br>
+      <span class="tag">자라섬인라인스케이트장 시설 개보수 8억 전액이월</span><span class="tag">생활체육공원 전광판 설치 6억 전액이월</span><br>
+      상수도사업특별회계(집행률 65.2%): 자본사업 설계·발주 역량 한계
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="section-num">3</span>불용액(집행잔액) 상위 10개 사업 분석</div>
+
+  <div class="legend">
+    <span class="legend-item"><span class="legend-dot" style="background:#5DCAA5"></span>보조금정산잔액</span>
+    <span class="legend-item"><span class="legend-dot" style="background:#378ADD"></span>지출잔액</span>
+    <span class="legend-item"><span class="legend-dot" style="background:#D85A30"></span>낙찰차액</span>
+  </div>
+  <div class="chart-wrap">
+    <canvas id="unusedChart" role="img" aria-label="분야별 집행잔액(불용액) 수평 막대차트, 기타 38억, 환경(일반) 29억, 문화관광 25억, 사회복지 23억, 국토개발 23억, 일반공공행정 20억, 교통물류 20억, 농림해양수산 19억, 공공질서안전 15억, 산업중소기업 12억">기타38억/환경29억/문화관광25억/사회복지23억/국토개발23억/일반공공행정20억/교통물류20억/농림19억/공공질서15억/산업12억</canvas>
+  </div>
+
+  <table style="margin-top:0.5rem">
+    <thead><tr><th>순위</th><th>분야/사업명</th><th>집행잔액(백만)</th><th>주요 사유</th></tr></thead>
+    <tbody>
+      <tr><td>①</td><td>기타 분야 (기타특별+인건비)</td><td>3,821</td><td><span class="badge badge-info">보조금 정산잔액 2,971백만 (공기관 위탁사업·민간이전)</span></td></tr>
+      <tr><td>②</td><td>환경 분야 (일반회계)</td><td>2,970</td><td><span class="badge badge-info">보조금 정산잔액 1,078백만 + 하수관로사업 낙찰차액</span></td></tr>
+      <tr><td>③</td><td>문화및관광 분야</td><td>2,553</td><td><span class="badge badge-warn">도종합체전 시설 개보수 낙찰차액·잔액 2,324백만</span></td></tr>
+      <tr><td>④</td><td>사회복지 분야</td><td>2,358</td><td><span class="badge badge-info">보조금 정산잔액 1,206백만 (급여 수급대상 감소)</span></td></tr>
+      <tr><td>⑤</td><td>국토및지역개발 분야</td><td>2,336</td><td><span class="badge badge-warn">인프라 사업 낙찰차액 40백만 + 지출잔액 2,295백만</span></td></tr>
+      <tr><td>⑥</td><td>일반공공행정 분야</td><td>2,094</td><td><span class="badge badge-ok">행정경비 절감 및 예비비 미집행 (낙찰차액 66백만)</span></td></tr>
+      <tr><td>⑦</td><td>교통및물류 분야</td><td>2,006</td><td><span class="badge badge-warn">도로 개설사업 지출잔액 1,983백만 (공사 지연)</span></td></tr>
+      <tr><td>⑧</td><td>농림해양수산 분야</td><td>1,925</td><td><span class="badge badge-info">보조금 정산잔액 742백만 + 농촌개발사업 지출잔액</span></td></tr>
+      <tr><td>⑨</td><td>공공질서및안전 분야</td><td>1,573</td><td><span class="badge badge-warn">낙찰차액 71백만 + 소방·안전시설 지출잔액 1,501백만</span></td></tr>
+      <tr><td>⑩</td><td>산업ㆍ중소기업및에너지</td><td>1,229</td><td><span class="badge badge-info">보조금 정산잔액 1,157백만 (국비·도비 보조사업 확정 지연)</span></td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:12px;color:var(--color-text-tertiary);margin-top:8px">※ 집행잔액 = 예산현액 − 지출액 − 이월액 − 보조금반납금. 예비비(449억) 제외.</p>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="section-num">4</span>전년도 대비 집행률 변화가 큰 분야 분석</div>
+
+  <div class="chart-wrap">
+    <canvas id="yearChart" role="img" aria-label="기능별 2023·2024 세출 비교 막대차트, 교육 +92.8%, 문화관광 +33.3%, 산업중기 +15.8%, 기타 +15.4%, 환경 +9.9%, 사회복지 +4.5%, 농림 -6.3%, 보건 -8.2%, 교통물류 -8.5%, 일반공공행정 -10.7%, 국토개발 -20.8%">2023→2024 전년대비 세출 변화율</canvas>
+  </div>
+
+  <table>
+    <thead><tr><th>분야</th><th>2023 지출(억)</th><th>2024 지출(억)</th><th>증감률</th><th>2024 집행률</th><th>주요 원인 분석</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>교육</strong></td><td>63</td><td>122</td><td><span class="badge badge-info">+92.8%</span></td>
+        <td><span class="badge badge-bad">52.7%</span></td>
+        <td style="font-size:12px">2025~2026 경기도종합체육대회 개최 대비 시설투자 대규모 편성(231억). 계속비이월 1,077억으로 집행률 급락. 가평종합운동장·체육관·생활체육공원 정비 사업 다년 시공 중</td>
+      </tr>
+      <tr>
+        <td><strong>문화및관광</strong></td><td>475</td><td>634</td><td><span class="badge badge-info">+33.3%</span></td>
+        <td><span class="badge badge-bad">71.0%</span></td>
+        <td style="font-size:12px">도종합체전 관련 시설 개보수 예산 급증(893억)으로 명시이월 1,432억 발생. 다년도 시설사업 특성상 당해연도 집행 한계</td>
+      </tr>
+      <tr>
+        <td><strong>국토및지역개발</strong></td><td>462</td><td>366</td><td><span class="badge badge-warn">-20.8%</span></td>
+        <td><span class="badge badge-bad">64.3%</span></td>
+        <td style="font-size:12px">세출 실집행 감소에도 이월 예산 누적(570억)으로 예산현액(570억) 증가. 인프라 사업 착공 지연 및 용지 취득 지연이 주원인. 전년도 이월 사업 집행 부진 지속</td>
+      </tr>
+      <tr>
+        <td><strong>공공질서및안전</strong></td><td>91</td><td>90</td><td>-0.4%</td>
+        <td><span class="badge badge-bad">72.6%</span></td>
+        <td style="font-size:12px">예산현액(124억)이 전년 대비 이월 포함 대폭 증가. 소방시설 정비·CCTV 확충 사업 계약 지연으로 사고이월 및 지출잔액 증가</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="section-num">5</span>정책 권고안</div>
+
+  <div class="rec-card">
+    <div class="rec-num">①</div>
+    <div>
+      <div class="rec-title">계속비 사업 집행 계획 세분화 및 분기 점검 체계 강화</div>
+      <div class="rec-body">교육·환경 분야의 계속비이월 총액(약 1,800억)은 다년도 공사의 구조적 특성이나, 공정 단계별 집행 기준 및 목표를 분기 단위로 세분화하여 집행 지연 조기 경보 체계를 운영해야 합니다. 특히 도종합체전 관련 시설 23개소의 준공 일정 관리가 핵심입니다.</div>
+    </div>
+  </div>
+  <div class="rec-card">
+    <div class="rec-num">②</div>
+    <div>
+      <div class="rec-title">상수도사업특별회계 집행률 개선 — 사업 발주 역량 보강</div>
+      <div class="rec-body">상수도 집행률 65.2%는 5개년 최저 수준입니다. 자본사업(관로 정비, 정수 시설) 설계 일정 선행 완료 후 예산 편성하는 '선설계 후예산' 방식 전환을 권고합니다. 발주 담당 인력 증원 또는 발주지원센터 활용도 검토하십시오.</div>
+    </div>
+  </div>
+  <div class="rec-card">
+    <div class="rec-num">③</div>
+    <div>
+      <div class="rec-title">보조금 정산잔액 최소화 — 사업 집행 전 수요 조사 강화</div>
+      <div class="rec-body">산업중소기업(115억), 사회복지(120억), 환경(107억) 분야의 보조금 정산잔액 합계가 342억원에 달합니다. 국비·도비 보조 사업 대상자 사전 확정 후 예산을 편성하고, 지속적으로 수요 대비 과다 편성되는 사업 목록을 관리하여 차년도 예산 감액을 원칙으로 운영해야 합니다.</div>
+    </div>
+  </div>
+  <div class="rec-card">
+    <div class="rec-num">④</div>
+    <div>
+      <div class="rec-title">명시이월 최소화 — '예산 이월 관리 책임제' 도입</div>
+      <div class="rec-body">문화관광 1,432억, 국토개발 981억 등 명시이월 총액 4,174억원은 전체 예산의 51%에 달합니다. 이월 사업별 담당자 책임을 명확히 하고, 전년도 이월액이 당해연도 이월로 재차 이월되는 '연속 이월' 사업에 대해서는 사업 타당성을 재검토하는 제도를 도입해야 합니다.</div>
+    </div>
+  </div>
+  <div class="rec-card">
+    <div class="rec-num">⑤</div>
+    <div>
+      <div class="rec-title">전략적 예산 편성 — 집행률·성과 연계형 예산 배분 방식 도입</div>
+      <div class="rec-body">집행률 우수 분야(사회복지 89.1%, 보건 94.8%, 기타 95.7%)와 저조 분야의 편성 전략을 차별화하고, 3년 연속 집행률 75% 미만 분야에 대해서는 이듬해 예산 편성 시 15% 자동 감액 원칙을 적용하는 성과연계 예산 제도를 도입하는 것을 권고합니다.</div>
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const isDark = matchMedia('(prefers-color-scheme: dark)').matches;
+const textColor = isDark ? 'rgba(255,255,255,0.65)' : 'rgba(0,0,0,0.55)';
+const gridColor = isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.07)';
+
+const execLabels = ['교육','국토\n개발','문화\n관광','공공질서\n안전','교통\n물류','환경','농림\n수산','산업\n중기','사회\n복지','보건','일반공공\n행정','기타'];
+const execData = [52.7,64.3,71.0,72.6,73.5,79.0,81.8,85.2,89.1,94.8,93.2,95.7];
+const execColors = execData.map(v => v < 80 ? (v < 70 ? '#E24B4A' : '#EF9F27') : '#1D9E75');
+
+new Chart(document.getElementById('execChart'), {
+  type: 'bar',
+  data: {
+    labels: execLabels,
+    datasets: [{
+      label: '집행률(%)',
+      data: execData,
+      backgroundColor: execColors,
+      borderWidth: 0
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: ctx => ctx.parsed.y.toFixed(1) + '%' } }
+    },
+    scales: {
+      x: { ticks: { color: textColor, font: { size: 11 } }, grid: { display: false } },
+      y: { min: 40, max: 100, ticks: { color: textColor, font: { size: 11 }, callback: v => v + '%' }, grid: { color: gridColor } }
+    }
+  }
+});
+
+new Chart(document.getElementById('unusedChart'), {
+  type: 'bar',
+  data: {
+    labels: ['기타','환경(일반)','문화관광','사회복지','국토개발','일반공공행정','교통물류','농림수산','공공질서안전','산업중기에너지'],
+    datasets: [{
+      label: '집행잔액(백만원)',
+      data: [3821,2970,2553,2358,2336,2094,2006,1925,1573,1229],
+      backgroundColor: ['#7F77DD','#7F77DD','#7F77DD','#7F77DD','#7F77DD','#5DCAA5','#EF9F27','#EF9F27','#EF9F27','#7F77DD'],
+      borderWidth: 0
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: ctx => ctx.parsed.x.toLocaleString() + '백만원' } }
+    },
+    scales: {
+      x: { ticks: { color: textColor, font: { size: 11 }, callback: v => v.toLocaleString() }, grid: { color: gridColor } },
+      y: { ticks: { color: textColor, font: { size: 11 } }, grid: { display: false } }
+    }
+  }
+});
+
+new Chart(document.getElementById('yearChart'), {
+  type: 'bar',
+  data: {
+    labels: ['교육','문화관광','산업중기','기타','환경','사회복지','농림수산','보건','교통물류','일반공공행정','국토개발'],
+    datasets: [
+      { label: '2023 세출(억)', data: [63,476,107,747,421,1607,607,85,319,447,462], backgroundColor: isDark ? 'rgba(255,255,255,0.15)' : 'rgba(0,0,0,0.1)', borderWidth: 0 },
+      { label: '2024 세출(억)', data: [122,634,124,862,463,1679,569,78,291,399,366], backgroundColor: '#378ADD', borderWidth: 0 }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + ctx.parsed.y.toLocaleString() + '억원' } }
+    },
+    scales: {
+      x: { ticks: { color: textColor, font: { size: 11 } }, grid: { display: false } },
+      y: { ticks: { color: textColor, font: { size: 11 }, callback: v => v + '억' }, grid: { color: gridColor } }
+    }
+  }
+});
+</script>
